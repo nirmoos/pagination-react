@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import ReactPaginate from 'react-paginate';
-import axios from 'axios';
-import './App.css';
+import React, { Component } from "react";
+import ReactPaginate from "react-paginate";
+import axios from "axios";
+import "./App.css";
 
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
         axios.get("https://demo.ghost.io/ghost/api/v2/content/posts/", {
             params: {
                 key: "22444f78447824223cefc48062",
-                limit: 5,
+                limit: 1,
                 page: pageNumber
             }
         })
@@ -43,18 +43,20 @@ class App extends Component {
             <div className="app">
                 <div className="paginate-wrapper">
                     <ReactPaginate
-                        previousLabel={'previous'}
-                        nextLabel={'next'}
-                        breakLabel={'...'}
-                        breakClassName={'break-me'}
-                        pageClassName={'page'}
-                        disabledClassName={'disabled-page'}
+                        previousLabel={<i className="fa fa-chevron-left"></i>}
+                        nextLabel={<i className="fa fa-chevron-right"></i>}
+                        previousLinkClassName={"nav"}
+                        nextLinkClassName={"nav"}
+                        breakLabel={"..."}
+                        breakClassName={"break-me"}
+                        pageClassName={"page"}
+                        disabledClassName={"disabled-page"}
                         pageCount={this.state.totalPages}
                         marginPagesDisplayed={2}
                         pageRangeDisplayed={5}
                         onPageChange={this.handlePageClick}
-                        containerClassName={'pagination'}
-                        activeClassName={'active'}
+                        containerClassName={"pagination"}
+                        activeClassName={"active"}
                     />
                 </div>
             </div>
