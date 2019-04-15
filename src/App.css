@@ -1,33 +1,35 @@
-.App {
-  text-align: center;
+/*pagination-css*/
+.paginate-wrapper {
+    text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.paginate-wrapper ul.pagination {
+    display: inline-block;
+    padding: 0px;
+    list-style-type: none;
+    background-color: #42b0f4;
+    color: #fff;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.paginate-wrapper ul.pagination li {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 8px 0px;
+    cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
+.paginate-wrapper ul.pagination li.disabled-page {
+    color: #cfd1ca;
+    cursor: default;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.paginate-wrapper ul.pagination li.active {
+    border-radius: 20px;
+    border: 1px solid #000;
+    color: #000;
+}
+.paginate-wrapper ul.pagination li.previous {
+    border-right: 1px solid #000;
+    margin-right: 10px;
+}
+.paginate-wrapper ul.pagination li.next {
+    border-left: 1px solid #000;
+    margin-left: 10px;
 }
